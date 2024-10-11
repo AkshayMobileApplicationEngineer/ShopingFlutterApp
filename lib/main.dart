@@ -1,25 +1,9 @@
-// main.dart
-import 'package:flutter/material.dart';
-import 'package:new_store/screen/splash_screen.dart';
+import 'package:flutter/cupertino.dart';
 
-
-
-void main() {
-  runApp(const MyApp());
+void main(){
+  runApp(const MyAmazonApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Insad',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: SplashScreen(),
-    );
-  }
+class MyAmazonApp {
+  const MyAmazonApp();
 }
