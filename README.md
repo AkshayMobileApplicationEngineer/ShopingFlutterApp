@@ -15,3 +15,7 @@
 # BAckend (Nodejs)
 
 # MongoDB (database)
+
+        ##Working Days of the this project(Project Report)
+        day 1: Settup flutter project
+        day 2: Routting Settup , And Create a Auth Screen
