@@ -11,3 +11,7 @@
     10. View your orders
     11. Set Status of the order
     12. Material UI
+
+# BAckend (Nodejs)
+
+# MongoDB (database)
