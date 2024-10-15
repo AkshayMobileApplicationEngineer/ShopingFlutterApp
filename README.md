@@ -30,6 +30,9 @@
 - Create an authentication screen for user login and registration.
 - Update `README.md` file with project information.
 
+#### Day 3: Sign Up and login Screen
+- 
+
 ## Getting Started
 
 ### Prerequisites
