@@ -1,4 +1,4 @@
-# My Amazon Clone
+# UrbanBasket Shopping App
 
 ## Project Report
 
@@ -31,8 +31,10 @@
 - Update `README.md` file with project information.
 
 #### Day 3: Sign Up and login Screen
-- 
-
+- Create Sign Up screen.
+- Set app name.
+- Style button backgrounds.
+#### Day 4: 
 ## Getting Started
 
 ### Prerequisites

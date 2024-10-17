@@ -1,10 +1,14 @@
+
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:new_store/view/authScreen.dart';
+
+import '../view/authScreen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case Authscreen.routeName:
-      return MaterialPageRoute(builder: (_) => Authscreen());
+    case AuthScreen.routeName:
+      return MaterialPageRoute(builder: (_) => AuthScreen());
   // Add more routes here as needed
     default:
       return MaterialPageRoute(
