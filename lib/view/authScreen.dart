@@ -61,23 +61,16 @@ class _AuthScreenState extends State<AuthScreen> {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  TextField(
+                  _buildTextField(
                     controller: emailController,
-                    decoration: const InputDecoration(
-                      labelText: 'Email',
-                      border: OutlineInputBorder(),
-                    ),
-                    textAlign: TextAlign.center,
-                    keyboardType: TextInputType.emailAddress,
+                    label: 'Email',
+                    isPassword: false,
                   ),
                   const SizedBox(height: 20),
-                  TextField(
+                  _buildTextField(
                     controller: passwordController,
-                    decoration: const InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
-                    ),
-                    textAlign: TextAlign.center,
+                    label: 'Password',
+                    isPassword: true,
                     obscureText: !showPassword,
                   ),
                   CheckboxListTile(
@@ -98,51 +91,83 @@ class _AuthScreenState extends State<AuthScreen> {
                     },
                     title: const Text("Keep Sign in"),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      // Add your sign-in logic here
-                      print("Sign In with email: ${emailController.text}");
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Colors.amber,
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 20),
-                      child: Center(child: const Text("Sign In")),
-                    ),
-                  ),
+                  _buildSignInButton(),
                   const Divider(thickness: 1),
                   Center(child: const Text("New to UrbanBasket Shopping App?")),
                   const SizedBox(height: 10),
-                  InkWell(
-                    onTap: () {
-                      // Navigate to account creation screen
-                      print("Create an UrbanBasket Account");
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 20),
-                      child: Center(child: const Text("Create an UrbanBasket Account")),
-                    ),
-                  ),
-                  const SizedBox(height: 80), // Add some space before the footer
-                  TextButton(
-                    onPressed: () {
-                      // Navigate to privacy notes or show them
-                      print("Conditions of the Privacy Notes");
-                    },
-                    child: const Text("Conditions of the Privacy Notes"),
-                  ),
+                  _buildCreateAccountButton(),
+                  const SizedBox(height: 20), // Add space before the footer
+                  _buildPrivacyButton(),
+                  const SizedBox(height: 20),
+                  const Text("MeliveAkshay", textAlign: TextAlign.center),
                 ],
               ),
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildTextField({
+    required TextEditingController controller,
+    required String label,
+    required bool isPassword,
+    bool obscureText = false,
+  }) {
+    return TextField(
+      controller: controller,
+      decoration: InputDecoration(
+        labelText: label,
+        border: const OutlineInputBorder(),
+      ),
+      textAlign: TextAlign.center,
+      keyboardType: isPassword ? TextInputType.visiblePassword : TextInputType.emailAddress,
+      obscureText: obscureText,
+    );
+  }
+
+  Widget _buildSignInButton() {
+    return GestureDetector(
+      onTap: () {
+        // Add your sign-in logic here
+        print("Sign In with email: ${emailController.text}");
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          color: Colors.amber,
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: const Center(child: Text("Sign In")),
+      ),
+    );
+  }
+
+  Widget _buildCreateAccountButton() {
+    return InkWell(
+      onTap: () {
+        // Navigate to account creation screen
+        print("Create an UrbanBasket Account");
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.amber,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: const Center(child: Text("Create an UrbanBasket Account")),
+      ),
+    );
+  }
+
+  Widget _buildPrivacyButton() {
+    return TextButton(
+      onPressed: () {
+        // Navigate to privacy notes or show them
+        print("Conditions of the Privacy Notes");
+      },
+      child: const Text("Conditions of the Privacy Notes"),
     );
   }
 }
