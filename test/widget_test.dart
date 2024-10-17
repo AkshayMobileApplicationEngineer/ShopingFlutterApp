@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // Import the main app file
-import 'package:new_store/main.dart';
+import 'package:UrbanBasket/main.dart';
 
 void main() {
   // Define a test for the counter increment functionality

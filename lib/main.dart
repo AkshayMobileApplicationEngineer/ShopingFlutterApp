@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:UrbanBasket/utils/appTheme.dart';
+import 'package:UrbanBasket/view/homeScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:new_store/view/authScreen.dart';
-
-import 'Router/route.dart';
+import 'Router/route.dart'; // Ensure this import is correct
 
 void main() {
   runApp(const MyAmazonCloneApp());
@@ -14,27 +13,11 @@ class MyAmazonCloneApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // Set to false for production
       onGenerateRoute: (settings) => generateRoute(settings),
       home: HomeScreen(),
+      theme: AppTheme.lightTheme, // Use the custom theme
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("My Amazon Clone"),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, Authscreen.routeName);
-          },
-          child: const Text("Navigate to Auth Screen"),
-        ),
-      ),
-    );
-  }
-}
